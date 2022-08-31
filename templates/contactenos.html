@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id="boletin">
+    <div class="contenedor">
+        <h1>contáctenos</h1>
+    </div>
+</section>
+<section id="principal">
+    <div class="contenedor">
+        <article id="col-principal">
+            <h1>Formulario de solicitud de servicios</h1>
+            <form class="formulario" action="#" onsubmit='return validar()'>
+                <label>nombre*
+                    <input type="text" name="Nombre" id="nombre" placeholder="Ingrese su nombre completo"
+                        pattern="[A-Za-z]{2,15}" required>
+                </label><br>
+                <label>Email*
+                    <input type="email" name="Email" id="email" placeholder="Ingrese su correo electronico"
+                        pattern="[0-10]{10}" required>
+                </label><br>
+                <label>Telefono*
+                    <input type="tel" name="Telefono" id="telefono" placeholder="Ingrese su telefono" required>
+                </label><br>
+                <label>solicitud*
+                    <textarea name="texto" id="campo" cols="30" rows="10" required></textarea><br>
+                </label>
+                <label><br>
+                    <input type="submit" class="input1" value="Enviar solicitud">
+                    <input type="reset" class="input2" value="Elimiar solicitud">
+                </label>
+                <script src="js/formulario.js"></script>
+            </form>
+        </article>
+        <div class="mapa">
+            <h3>Estamos Ubicandos <br> Calle 40 #6-18</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.4648896727701!2d-75.21306192571033!3d4.437237876516425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c593f1f61ccf%3A0xfddd0f6f943dbf1e!2sRYRTECNOLOGIA!5e0!3m2!1ses!2sco!4v1655980843578!5m2!1ses!2sco"
+                width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

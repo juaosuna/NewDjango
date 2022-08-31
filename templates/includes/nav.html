@@ -1,15 +1,14 @@
 {% load static %}
-
 <header class="contenedor">
     <div class="marca">
         <img src="{% static 'img/logo.png' %}" width="300">
     </div>
     <nav>
         <ul>
-            <li class="actual"><a href="index.html">Inicio </a></li>
-            <li class="actual"><a href="contactenos.html">Contactenos </a></li>
-            <li class="actual"><a href="nosotros.html">Quienes Somos </a></li>
-            <li class="actual"><a href="servicios.html">Servicios </a></li>
+            <li class="actual"><a href="{% url 'home'%}">Inicio </a></li>
+            <li class="actual"><a href="{% url 'contactenos'%}">Contactenos </a></li>
+            <li class="actual"><a href="{% url 'nosotros'%}">Quienes Somos </a></li>
+            <li class="actual"><a href="{% url 'Servicios'%}">Servicios </a></li>
         </ul>
     </nav>
 </header>
