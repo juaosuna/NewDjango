@@ -1,0 +1,268 @@
+body{ /* este es el cuerpo de la pgina */
+    padding: 0px;
+    margin: 0px;
+    background-color: #b9d5de;
+  }
+  /*estilos generales*/
+  .contenedor{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  .boton{
+    height: 38px;
+    background-color: #00263e;
+    border: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+  }
+  /*estilo de encabezado*/
+  header{
+  
+    bottom: #24282b;
+    color: #0A080A;
+    padding-top: 20px;
+    min-height: 70%;
+    
+  }
+  header a{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  header #marca{
+    float: left;
+  }
+  header #marca h1{
+    margin: 0;
+  }
+  header nav{
+    background-color: #dbe8ee;
+    float: right;
+    margin-top: 5px;
+  }
+  header .resultado, header .actual a{
+    color: #00263e;
+    font-weight: bold;
+  }
+  header a:hover{
+    color: #20b113;
+    font-weight: bold;
+  }
+  /*estilo cabecera*/
+  #cabecera{
+    background: url("../img/anicura-home.jpg");
+    background-size: 100% 150%;
+    background-repeat: no-repeat;
+  }
+  #cabecera h1{
+    color: #00263e;
+    margin-top: 150px;
+    font-size: 40px;
+    margin-bottom: 150px;
+    text-align: center;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #bdeaff85;
+    
+  }
+  #boletin{
+    padding: 15px;
+    color: #00263e;
+    background: #00263e63;
+  }
+  #boletin h1{
+    float: left;
+  }
+  #cajas{
+    margin-top: 20px;
+    border-color: #fff;
+  }
+  #cajas .caja{
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 28%;
+    border-radius: 20px;  /*para darle borde redondeado o cuadrado a la imagen o contenedor */
+    background-color: #dbe8ee;
+  }
+  #cajas .caja img{
+    width: 40%;
+    border-radius: 10px;
+  }
+  #cajas .caja h1,h2,h3{
+    color: #0A080A;
+  }
+  /*estilo lateral*/
+  aside#lateral, #lateral1, #lateral2{
+    text-align: justify;
+    float: right;
+    width: 30%;
+    margin-top: 1%;
+  }
+  .oscuro{
+    text-align: justify bold;
+    padding: 15px;
+    background-color: #8eb5ffc2;
+    color: #142426;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    border-radius: 20px;
+  }
+  .claro{
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    border-radius: 30px;
+  }
+  /*estilo para columna principal*/
+  article#col-principal{
+    text-align: justify;
+    float: left;
+    width: 65%;
+  }
+  /*estilo de la lista desordenada*/
+  ul#productos li{
+    list-style: none;
+    padding: 20px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    margin-bottom: 75px;
+    background-color: #dbe8ee ;
+  }
+  /*estilos para formulario*/
+  .formulario {
+    width: 400px;
+    background: #8eb5ffc2;
+    padding: 30px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px; 
+  }
+  
+  .mapa{
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column;
+    border-radius: 20px;
+  }
+  
+  .input1, .input2 {
+    font-size: 15px;
+    height: 30px;
+    margin: 5px;
+    outline: none;
+    width: 45%;
+  }
+  input,textarea{
+    width: 100%;
+    height: 35%;
+    border: 2px;
+    border-radius: 20px;
+    border: 1px solid gray;
+  }
+  textarea{
+    height: 120px;
+  }
+  input[type="submit"]{
+    background-color: #00263e;
+    color: #fff;
+  }
+  
+  /*estilos medidas queridas adaptables a cualquier dispositivo*/
+  @media(max-width:750px){
+    header #marca,
+    header nav,
+    header nav li,
+    #boletin h1,
+    #boletin form,
+    #cajas .caja,
+    article#col-principal,
+    aside#lateral,
+    aside#lateral1,
+    aside#lateral2
+    {
+        float:none;
+    }
+  }
+  
+  /* Footer */
+  .final{
+    background-color: #00263e;
+    margin-top: 20px;
+    
+  }
+  .final .pie-1{
+    width: 100%;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+  }
+  .final .pie-1 .box .forma{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .final .pie-1 .box .forma img{
+    width: 190px;
+    margin-top: -5px;
+  }
+  .final .pie-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 15px;
+  }
+  .final .pie-1 .box p{
+    margin-bottom: 10px;
+  }
+  .final .pie-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    transition: all 300ms ease;
+  }
+  .final .pie-2{
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffffff;
+    
+  }
+  .final .pie-2 small{
+    font-size: 15px;
+  }
+  @media screen and (max-width:800px){
+    .final .pie-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+        text-align: center;
+    }
+    .final .pie-1 .box forma img{
+        width: 190px;
+    }
+  }
+  

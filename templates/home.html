@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="cabecera">
+    <div class="contenedor">
+        <h1>Bienvenidos a los hospitales veterinarios de AniCura</br>
+            Porque tu mascota merece la mejor atención</h1>
+    </div>
+</section>
+<section id="cajas">
+    <div class="contenedor">
+        <div class="caja">
+            <img src="{% static 'img/values.png ' %}">
+            <h3> veterinaria 24 horas. </h3>
+        </div>
+        <div class="caja">
+            <img src="{% static 'img/servicios-corto.png' %}">
+            <h3>La higiene es fundamental para su mascota. </h3>
+        </div>
+        <div class="caja"><img src="{% static 'img/find-clinic.png' %}">
+            <h3>concentrado.</h3>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

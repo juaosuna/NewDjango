@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id="boletin">
+    <div class="contenedor">
+        <h1>Productos</h1>
+    </div>
+</section>
+<section id="cajas">
+    <div class="contenedor">
+        <div class="caja">
+            <img src="{% static 'img/shampoo1.png ' %}">
+            <h3>Shampoos</h3>
+        </div>
+        <div class="caja">
+            <img src="{% static 'img/corte de pelo.png ' %}">
+            <h3>corte de pelo</h3>
+        </div>
+        <div class="caja"><img src="{% static 'img/Limpieza-de-Dientes.png ' %}
+            
+            
+            
+            
+            ">
+            <h3>Cepillado de los dientes</h3>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
