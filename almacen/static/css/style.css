@@ -9,6 +9,12 @@ body{ /* este es el cuerpo de la pgina */
     margin: auto;
     overflow: hidden;
   }
+
+  .plantilla{
+    width: 40%;
+    margin: auto;
+  }
+  
   ul{
     margin: 0;
     padding: 0;

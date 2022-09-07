@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="plantilla">
+    <div class="py-5 text-center">
+        <h2>Registrarse</h2>
+    </div>
+
+    <form action="{% url 'registro' %}" method="post">
+        {% csrf_token %}
+        <div class="row g-3 p-3 mb-2 bg-info text-white">
+            <div class="col-12">
+                <label for="nombres" class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" name="username" id="nombres" placeholder="" value=""
+                    required="">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="emailUsuario" id="email"
+                    placeholder="correo@ejemplo.com">
+            </div>
+            <div class="clo-12">
+                <label for="password" class="form-label">Constraseña</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="">
+            </div>
+            <div class="col-12">
+                <label for="confirmPassword" class="form-label">Confirmar constraseña</label>
+                <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="">
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn boton1 btn-1g" type="submit">Guardar datos</button>
+    </form>
+</div>
+
+{% endblock %}
