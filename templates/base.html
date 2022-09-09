@@ -19,6 +19,16 @@
     <div class="container">
         <!--menu de navegacion-->
         {% include 'includes/nav.html' %}
+        {% if alarma %}
+            <div class="alert alarma">
+                <p>{{ alarma }}</p>
+            </div>
+        {% endif %}
+        {% if mensaje %}
+            <div class="alert mensaje">
+                <p>{{ alarma }}</p>
+            </div>
+        {% endif %}
     
         <!--bloque principal-->
         {% block content %}
