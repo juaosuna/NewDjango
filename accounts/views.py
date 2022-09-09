@@ -1,13 +1,15 @@
-import email
-from multiprocessing import context
-from ssl import _PasswordType
+from distutils.command.build_scripts import first_line_re
 from django.shortcuts import render
+from .models import Account
+from django.contrib import auth
 
 # Create your views here.
 
 def registrarse(request):
-    context
+    context={}
     if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         password = request.POST['password']
         confirmPassword = request.POST['password']
         username = request.POST['username']
@@ -32,4 +34,20 @@ def registrarse(request):
 
 
 
-    return render(request, 'registro.html', context)
+    return render(request, 'usuarios/registro.html', context)
+
+#************************CONTROL DE INGRESO DE USUARIOS*********************
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        user = auth.authentication(email= email, password = password)
+
+        if user is not None:
+            auth.login(request, user)
+            return render(request, 'home.html')
+        else:
+            return render(request, 'usuarios/login.html', {'alarma' : 'Correo o password no valido'}) 
+
+    else:
+        return render((request), 'usuarios/login.html') 
