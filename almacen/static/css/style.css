@@ -271,4 +271,11 @@ body{ /* este es el cuerpo de la pgina */
         width: 190px;
     }
   }
+
+.alarma{
+  background-color: rgb(246, 118, 13);
+}
+.mensaje{
+  background-color: rgb(255, 252, 80);
+}
   

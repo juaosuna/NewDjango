@@ -41,8 +41,7 @@ class Account(AbstractBaseUser):
 
     ROLES= (
         ('admin', 'admin'),
-        ('gerente', 'gerente'),
-        ('asistente', 'asistente'),
+        ('cliente', 'cliente')
     )
 
     first_name = models.CharField(max_length=50)

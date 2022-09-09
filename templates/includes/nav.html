@@ -13,4 +13,12 @@
             <li class="actual"><a href="{% url 'Servicios'%}">Servicios </a></li>
         </ul>
     </nav>
+    <div class="actual">
+        {% if user.id is None %}
+        <h1 class="resultado">Visitante</h1>
+        {% else %}
+        <h1 class="resultado"> {{ user.username }}</h1>
+        {% endif %}
+    </div>
+
 </header>
