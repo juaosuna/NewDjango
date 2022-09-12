@@ -51,4 +51,10 @@ def login(request):
             return render(request, 'usuarios/login.html', {'alarma' : 'Correo o password no valido'}) 
 
     else:
-        return render((request), 'usuarios/login.html') 
+        return render((request), 'usuarios/login.html')
+    
+#********************* DESACTIVACION DEL USUARIO *************************
+@login_required(login_url='login')
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
