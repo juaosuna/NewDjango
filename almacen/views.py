@@ -9,5 +9,5 @@ def contactenos(request):
 def nosotros(request):
     return render(request, 'nosotros.html')
 
-def Servicios(request):
-    return render(request, 'servicios.html')
+def Productos(request):
+    return render(request, 'productos/productos.html')

@@ -2,9 +2,11 @@ from asyncio.windows_events import NULL
 from csv import list_dialects
 from multiprocessing import context
 from django.shortcuts import render
+from asyncio.windows_events import NULL
 from .models import Producto
 
 # Create your views here.
+
 def verProductos(request, id= NULL):
     if not id:
         listaProductos = Producto.objects.all()
