@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="mb-3 descripcion">
+    <h4>Lista de Productos</h4>
+</div>
+
+<div class="row">
+
+    <table class="table">
+        <tbody>
+            {% for prod in productos %}
+            <tr>
+                <td><img src="{{prod.icono.url}}" alt="icono del producto"></td>
+                <td>{{prod.nombre}}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
