@@ -9,7 +9,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=8, decimal_places=2)
     unidad = models.CharField(max_length=10, null=False)
     imagen = models.ImageField(upload_to='productos')
-    imagen = models.ImageField(upload_to='iconos')
+    icono = models.ImageField(upload_to='iconos')
 
     def __str__(self):
         return self.nombre
