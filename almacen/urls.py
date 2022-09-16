@@ -27,7 +27,7 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('contactenos/', views.contactenos, name="contactenos"),
     path('nosotros/', views.nosotros, name="nosotros"),
-    path('productos/', views.Productos, name="productos"),
+    path('productos/', include('appProductos.urls')),
     path('accounts/', include('accounts.urls'))
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

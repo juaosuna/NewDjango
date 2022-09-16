@@ -8,7 +8,7 @@
 <div class="row">
 
     <div class="card" style="width: 18rem;">
-        <img src="{{ producto.image.url }}" class="card-img-top" alt=".....">
+        <img src="{{ producto.imagen.url }}" class="card-img-top" alt=".....">
         <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
             <p class="card-text">{{producto.descripcion}}</p>
@@ -17,7 +17,7 @@
             <li class="list-group-item">${{producto.precio}}/{{producto.unidad}}</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="btn btn-success">agregar al carrito</a>
+            <a href="{% url 'carrito' producto.id  %}" class="btn btn-success">agregar al carrito</a>
         </div>
     </div>  
 </div>

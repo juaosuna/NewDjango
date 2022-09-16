@@ -11,9 +11,9 @@
         <tbody>
             {% for prod in productos %}
             <tr>
-                <td><img src="{{prod.icono.url}}" alt="icono del producto"></td>
+                <td><img src="{{ prod.icono.url }}" alt="icono del producto"></td>
                 <td>{{prod.nombre}}</td>
-                <td></td>
+                <td><a href="{% url 'producto' prod.id %}" type="button" class="btn btn-info">ver detalles</a></td>
             </tr>
             {% endfor %}
         </tbody>
