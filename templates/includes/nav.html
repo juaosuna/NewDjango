@@ -9,7 +9,8 @@
             <li class="actual"><a href="{% url 'contactenos'%}">Contactenos </a></li>
             <li class="actual"><a href="{% url 'nosotros'%}">Quienes Somos </a></li>
             <li class="actual"><a href="{% url 'producto' %}">Productos </a></li>
-
+            {% if user.id is None %}
+            {% else %}
             <li class="actual">
                 <a href="{% url 'ver_carrito' %}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -19,14 +20,18 @@
                         <path d="M17 17h-11v-14h-2" />
                         <path d="M6 5l14 1l-1 7h-13" />
                       </svg>
-                </a></li>
+                </a>
+            </li>
+            
+            {% endif %}
 
             {% if user.id is None %}
             <li class="actual"><a href="{% url 'registro'%}">Registrarse </a></li>
             <li class="actual"><a href="{% url 'login'%}">Ingresar</a></li>
             {% else %}
-
             {% endif %}
+
+
             {% if user.id is None %}
             {% else %}
             <li class="actual"><a href="{% url 'logout' %}">Salir</a></li>
