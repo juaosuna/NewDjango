@@ -33,7 +33,7 @@ def agregar(request, id= NULL):
     regProducto = Producto.objects.get(id=id)
     existe = Carrito.objects.filter(producto = regProducto, estado = 'carrito').exists()
     if existe:
-        regCarrito = Carrito.objects.get(producto = regProducto, estado = 'carrito')
+        regCarrito = Carrito.objects.get(cliente=user,producto = regProducto, estado = 'carrito')
         regCarrito.cantidad += 1
         regCarrito.save()
     else:
@@ -45,3 +45,48 @@ def agregar(request, id= NULL):
         'productos' : listaProductos,
     }
     return render(request, 'productos/productos.html', context)
+
+
+def verCarrito(request):
+    regUser = request.user
+    carrito = Carrito.objects.filter(cliente=regUser, estado='carrito')
+    # Recorrer elementos del carrito para calcular totales
+
+    listaCarrito = []
+    total = 0
+    for prod in carrito:
+        unProducto={
+			'cantidad': prod.cantidad,
+			'icono': prod.producto.icono,
+			'nombre': prod.producto.nombre,
+			'valor': prod.producto.precio,
+			'unidad': prod.producto.unidad	,
+			'total': int(prod.cantidad)	* int(prod.producto.precio),
+			'id': prod.id,
+	    }
+ 
+        listaCarrito.append(unProducto) 
+        total += unProducto['total']
+
+    #ensamblar datos para la plantilla
+    context = {
+        'carrito':  listaCarrito,
+        'subtotal': total,
+        'iva': total * 0.19,
+        'envio': 10000,
+        'total': total * 1.19 + 8000,
+    }
+    print('pppp')
+    print(context)
+    return render(request, 'productos/carrito.html', context)
+
+
+def eliminarCarrito(request, id):
+    #Consultar el reg
+    regCarrito = Carrito.objects.get(id=id)
+    regCarrito.estado = 'cancelado'
+    #guardar en DB
+    regCarrito.save()
+    #Desplegar el carrito
+    return verCarrito(request)
+
