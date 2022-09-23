@@ -1,9 +1,12 @@
 from asyncio.windows_events import NULL
 from csv import list_dialects
+import json
 from multiprocessing import context
 from django.shortcuts import render
 from asyncio.windows_events import NULL
 from .models import Carrito, Producto
+from django.http import JsonResponse
+import json
 
 # Create your views here.
 
@@ -90,3 +93,23 @@ def eliminarCarrito(request, id):
     #Desplegar el carrito
     return verCarrito(request)
 
+def cambiarCantidad(request):
+    is_ajax = request.META.get('HTTP_X_REQUESTED_WITH')== 'XMLHttpRequest'
+    if is_ajax:
+        if request.method == 'POST':
+            #toma la data enviada por el cliente
+            data = json.load(request)
+            id = data.get('id')
+            cantidad = int(data.get('cantidad'))
+            if cantidad > 0:
+                #lee el registro y lo modifica
+                regProducto = Carrito.objects.get(id=id)
+                regProducto.cantidad = cantidad
+                regProducto.save()
+            
+            return JsonResponse({'mensaje': 'cantidad modificada a ' + str(cantidad)})
+        
+        return JsonResponse({'alarma' : 'no se pudo modificar...'}, status=400)
+    
+    else:
+        return verCarrito(request)
